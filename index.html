@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple static school portal for GitHub Pages.">
+  <title>School Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">📚 School Portal</div>
+    <button id="themeBtn" class="icon-btn" aria-label="Toggle theme">☾</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>What do you want to open?</h1>
+      <p>Use the shortcuts below, or enter a URL. Some websites won't display inside the viewer because they block iframe embedding.</p>
+
+      <form id="urlForm" class="url-form">
+        <input id="urlInput" type="text" placeholder="https://example.com" autocomplete="off">
+        <button type="submit">Open</button>
+      </form>
+
+      <div id="message" class="message" role="status"></div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Shortcuts</h2>
+        <button id="editBtn" class="small-btn">Edit shortcuts</button>
+      </div>
+      <div id="cards" class="cards"></div>
+    </section>
+
+    <section id="viewerSection" class="viewer-section hidden">
+      <div class="section-title">
+        <h2 id="viewerTitle">Viewer</h2>
+        <div>
+          <button id="newTabBtn" class="small-btn">Open in new tab</button>
+          <button id="closeViewerBtn" class="small-btn">Close</button>
+        </div>
+      </div>
+      <iframe id="viewer" title="Website viewer" referrerpolicy="no-referrer"></iframe>
+      <p class="viewer-note">If the page is blank, the website probably blocks iframe embedding. Use “Open in new tab” instead.</p>
+    </section>
+  </main>
+
+  <footer>
+    <span>Static GitHub Pages site • No backend required</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
